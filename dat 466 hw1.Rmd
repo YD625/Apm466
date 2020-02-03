@@ -1,0 +1,81 @@
+---
+title: '466'
+author: "YING DU 1003111303"
+date: "2020/1/31"
+output: pdf_document
+---
+##excel was used for question 4
+##code for question 5 and question 6:
+
+```{r}
+library(readxl)
+data<-read_excel("/Users/BeanSprout/Desktop/data for APM466 AS1.xlsx", sheet="Sheet3")
+data_edit<- data[21:29,2:6]
+matrix<-data.matrix(data_edit)
+covy<-cov(matrix)
+covy
+eigen(covy)
+```
+
+$$
+\begin{pmatrix}
+1.255097e-04&8.957386e-05&8.163471e-05&0.0001086879&7.539064e-05\\
+8.957386e-05& 1.439561e-04& 1.165095e-04& 0.0001467995& 1.907082e-04\\
+163471e-05& 1.165095e-04& 1.136821e-04& 0.0001352065& 2.010031e-04\\
+086879e-04& 1.467995e-04& 1.352065e-04& 0.0001673181& 2.238741e-04\\
+7.539064e-05& 1.907082e-04& 2.010031e-04& 0.0002238741& 6.376639e-04
+\end{pmatrix}
+$$
+$$\begin{pmatrix}-0.1937886\\-0.3299953 \\-0.3215318 \\-0.3776557 \\-0.7794502 \end{pmatrix} \begin{pmatrix}-0.5710991\\ -0.3610094\\-0.2410851\\-0.3848669 \\ 0.5807525 \end{pmatrix}\begin{pmatrix}  0.7628570\\-0.5578007\\-0.1603907\\ -0.1954263\\  0.2073426\end{pmatrix}\begin{pmatrix}  0.2148154\\0.6423973\\-0.6322517 \\-0.3597208 \\0.1097219 \end{pmatrix} \begin{pmatrix}0.09052802\\0.19224838\\0.64267249\\-0.73597768\\-0.01241625\end{pmatrix}$$
+
+
+
+```{r}
+data<-read_excel("/Users/BeanSprout/Desktop/data for APM466 AS1.xlsx", sheet="Sheet4")
+data_edit<- data[6:15,1:4]
+matrix<-data.matrix(data_edit)
+covf<-cov(matrix)
+eigen(covf)
+covf
+
+```
+
+$$
+\begin{pmatrix}
+1.414593e-07& 1.258961e-07& 1.054907e-07& 1.248796e-07\\
+1.258961e-07 &1.296518e-07& 9.762379e-08& 8.724631e-08\\
+1.054907e-07& 9.762379e-08& 8.977923e-08& 1.074387e-07\\
+1.248796e-07& 8.724631e-08 &1.074387e-07& 2.420449e-07\\
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+-0.5120584 \\
+-0.4451032\\
+-0.4127344\\
+-0.6077250\end{pmatrix}
+\begin{pmatrix}
+0.3086193\\
+0.5392943\\
+0.1637435 \\
+-0.7662270\end{pmatrix}
+\begin{pmatrix}
+0.75778401\\
+-0.29596074 \\
+-0.58088682 \\
+-0.02722381\end{pmatrix}
+\begin{pmatrix}
+-0.2613690\\
+0.6507319\\
+-0.6822088\\
+0.2069429\end{pmatrix}
+$$
+
+
+
+
+
+
+
+
